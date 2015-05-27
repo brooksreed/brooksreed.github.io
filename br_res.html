@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="br_styles.css">
+<title>Brooks Reed - Home</title>
+</head>
+
+<body>
+<div id="column">
+<img src="i/gen_header.jpg"/>
+
+<div id="nav">
+<ul id="navlist">
+  <li id="home"><a href="index.html"></a></li>
+  <li id="res"><a href="br_res.html"></a></li>
+  <li id="cv"><a href="br_cv.html"></a></li>
+  <li id="int"><a href="br_int.html"></a></li>
+</ul>
+</div>
+<div id="innards">
+
+<h2>Research Themes</h2>
+<p>
+Marine robotic vehicle platforms and sensor technology are becoming mature, making multiple-vehicle operations an attractive solution for tracking dynamic underwater targets as well as increasing the spatial and temporal resolution of oceanographic surveys.  Collaboration between vehicles promises new capabilities and improved performance, but requires communication.  Underwater, wireless communication over distances beyond about one hundred meters is almost exclusively accomplished via acoustics, which suffer from packet loss, low data rates and long delays.  These limitations have traditionally limited the use of acoustic communications in high-performance, real-time tasks. </p>
+
+<p>My research considers design of real-time control systems for fleets of vehicles collaborating via acoustic communications.  This involves posing relevant problems in a framework suitable for closed-loop control, as well as developing and implementing communication-constrained control algorithms.  </p>
+
+<p>Along with a team of students and engineers, I have worked to develop a small-scale acoustics and control testbed using autonomous kayaks towing acoustic modems (we use the <a target="_blank" href="http://acomms.whoi.edu">WHOI MicroModem</a>).   We run experiments primarily in the Charles River from the <a target="_blank"  href="http://sailing.mit.edu">MIT Sailing Pavilion</a>, with occasional trips to Boston Harbor and Woods Hole.  More information on this system can be found on <a target="_blank" href="https://wikis.mit.edu/confluence/display/hovergroup/">our wiki</a></p>
+
+<h2>Oceanographic Pursuit</h2>
+
+<p> <img src="i/OPblockdiagram.jpg" width="500"/ align="right" style="margin-left:20px"></p>
+ 
+ <p> The behavior of ocean fronts and similar structures such as plumes and filaments has long been of interest to oceanographers. Modeling of ocean fronts at the mesoscale and smaller remains challenging , and hence has emerged as a primary focus area for mobile sensing systems. While single vehicles have executed measurement-driven trajectories and ocean modeling is increasingly integrated with vehicle path-planning, multi-vehicle coordination under communication constraints has not yet been integrated with global model information until now. </p>
+ 
+ <p>This work develops a unique multi-vehicle frontal point description and control methodology for tracking and pursuit of dynamic ocean features at improved temporal resolution compared to existing methods.  Our approach fits as an intermediary between high-bandwidth vehicle flight control (at the seconds time scale) and lower-frequency procedures in numerical ocean modeling, assimilation, and adaptive sampling.  A new projector algorithm enables direct linearization of ocean model forecast uncertainty in vehicle coordinates via a forward model technique, giving a clean stochastic system representation suitable for closed-loop control.  The methodology accurately decomposes spatial and temporal variations, exploits coupling between sites along the feature, and allows for advanced methods in communication-constrained control.  Simulations with three example datasets successfully demonstrate the proof-of-concept. </p>
+ 
+<!-- <p> In this work, we combine the themes above to focus on tracking and pursuit of dynamic ocean fronts by multiple unmanned vehicles, posing the problem in such a way as to accommodate the most promising developments in communication-constrained feedback control. This method fits as an intermediary between high-bandwidth vehicle flight control (at the seconds time scale) and lower-frequency procedures in numerical ocean modeling, assimilation, and adaptive sampling. Our approach uses ocean model predictions to design closed-loop networked control at short time scales, and the primary innovation is to represent model uncertainty via a projection of ensemble forecasts into local linearized vehicle coordinates. Based on this projection, we identify a stochastic linear time-invariant model for estimation and control design. The methodology accurately decomposes spatial and temporal variations, exploits coupling between sites along the feature, and allows for advanced methods in communication-constrained control. These elements all enable a reactive control methodology for dynamically sampling the ocean, that may surpass many approaches used today. </p>-->
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/GEgMaxMt6gQ" frameborder="0" allowfullscreen></iframe>
+
+<p >Reed, B., and F. Hover, &quot;Tracking Ocean Fronts with Multiple Vehicles and Mixed Communication Losses&quot;,  IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2013. (<a target="_blank" href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6696837">Link to full text at IEEE Xplore</a>) </p>
+
+<p>Reed, B. and F. Hover, “Oceanographic Pursuit: Networked Control of Multiple Vehicles Tracking Dynamic Ocean Features,” Methods in Oceanography, Special Issue on Autonomous Vehicles, May 2014. (<a target="_blank"  href="http://www.sciencedirect.com/science/article/pii/S221112201400022X">Link to Open Access pdf</a>)</p>
+
+<h2> JLS Framework for Networked Control </h2>
+
+<p> <img src="i/JLSdiagram.jpg" width="520"/ align="right" style="margin-left:20px"></p>
+
+<p>Acoustic communication links are a crucial component in the feedback loop for underwater multi-vehicle systems operating under centralized estimation and control.  A multi-node system using acoustic communications is subject to multiple-access constraints; the most straightforward approach is interference-free time-division multiple access (TDMA) scheduling. This results in a multi-rate control system, where measurements arrive at the estimator at different times, and control arrives to an individual vehicle at different times.  Packet delays resulting from acoustic propagation time and transmission time are (nearly) deterministic but substantial, especially if relays must be used.  Stochastic packet loss complicates control design further.  </p>
+
+<p>In this work, we develop a framework for multi-vehicle control and estimation with control, measurement, and acknowledgment packets all subject to schedules, delays and packet loss.  The modular framework is built around a jump linear system (JLS) description that includes Packetized Predictive Control (PPC), a technique that combines the receding horizon optimization of Model Predictive Control with buffering at the actuator.  Integration of these elements enables synthesis of a novel technique for estimation using delayed and lossy control acknowledgments---a desirable and practical capability of fielded systems that has not been considered in work to date.  The unified formalism we develop helps maintain clean notation and system description across different multi-vehicle systems and communication scenarios.  The modular framework will allow future improvements or modifications to specific blocks without the need to develop an entire system from scratch.  Simulations and field experiments demonstrate the effectiveness of the methods, including the benefits to utilizing delayed and lossy control acknowledgments. </p>
+
+<!-- <p>  The difficulty of analysis in networked control has limited work primarily to situations where only a subset of practical conditions are considered.
+
+To our knowledge this is the first technique that integrates all of these aspects.  Our approach builds on aspects of existing control and estimation techniques: the Kalman filter (KF), model predictive control (MPC), and buffering of control trajectories.  The primary contributions are a novel approach for handling delayed or missing acknowledgments within the framework of multirate scheduling and delays with control trajectory buffers, and a modular description of the integrated system in a compact jump system form. 
+   
+The elements that make up the JLS-PPC controller are modular, consisting of a jump variable estimator, a lossy state estimator, a forward propagation step, MPC optimization, and the PPC buffer.  Our jump estimator algorithm uses a novel approach for using delayed and lossy control packet acknowledgments, made possible by the use of the PPC buffer and the JLS system description.   </p>-->
+
+<h2>Dynamic Pursuit with Underwater Acoustics</h2>
+
+<p> <img src="i/PursuitTF.jpg" width="300"/ align="right" style="margin-left:20px"></p>
+ 
+<p>Feature <a target="_blank"  href="http://oceans.mit.edu/featured-stories/hot-pursuit">story by Oceans at MIT</a>!</p>
+ 
+<p>In this work we address through experiments the capability of acoustics to sustain highly dynamic, multi-agent missions, in particular range-only pursuit in a challenging shallow-water environment.  Our key experiment in joint localization and pursuit has two mobile agents sharing sensor information and commands through acoustic links. We make scalar range measurements at each agent, and thus tracking is impossible without their coordination.  The mobile agents attempt to stay close to the target, and in a formation conducive to good sensor performance.  Estimation and control are tightly coupled in this mission, allowing us to study the effects of packet loss, quantization, delays and scheduling on the frequency response of the integrated closed-loop system. </p>
+
+<p>We carried out extensive shallow-water field tests, comparing performance when using full-sized packets (“FSK0”) with negligible quantization and a 23s cycle, RF wireless communication (“WiFi”) with a 4s cycle and negligible quantization, and 13-bit mini-packets (“MP”) with a 12s cycle. With 13-bit mini-packets, we employed logarithmic quantization for 3-bit range measurements. Recalling our broad objective to achieve dynamic control through mobile acoustic networks, it is revealing to ask what effective closed-loop estimation bandwidth was achieved. A direct FFT-based empirical transfer function for the estimation error divided by target motion shows that the bandwidth of the system using mini-packets exceeds that of the system using FSK0 packets, despite the heavy quantization.  Our results are the first quantitative analysis of tracking bandwidth reported in multi-vehicle marine robotics literature, and show definitively that aggressive dynamic control of multi-agent systems underwater is tractable today.
+</p><br><br>
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/videoseries?list=PLGErotWWaQgHNiFA9lvW3lIt2rU63HtFW" frameborder="0" allowfullscreen></iframe>
+
+<p>Reed, B., Leighton, J., Stojanovic, M. and F. Hover, "Multi-Vehicle Dynamic Pursuit using Underwater Acoustics", International Symposium on Robotics Research (ISRR), December 2013. (<a target="_blank" href="Reed2013_DynamicPursuitExperiments.pdf" target="_blank">Full Text, PDF</a>)</p>
+
+<!--(<a target="_blank" href="Reed2013_DynamicPursuitExperiments_reformatted.pdf" target="_blank">Preprint, PDF</a>)-->      
+
+<!--This is a comment. Comments are not displayed in the browser-->
+<h2>Robust Minimum Energy Routing for Multicast</h2>
+
+<p>While network routing and topology decisions are usually made with decentralized algorithms, centralized optimization-based approaches bring the possibility of integrated design of communication and control.  This work considers a robust formulation of a mixed-integer linear programming approach to wireless multicast routing.</p>
+
+<img class="gen" src="i/RobustMET_1slide.png" width="560">
+<p>Reed, B., Stojanovic, M., Mitra, U. and F. Hover, &quot;Robust Minimum Energy Wireless Routing for Underwater Acoustic Communication Networks,&quot;  IEEE Globecom 2012 Workshop on Wireless Networking and Control for Unmanned Autonomous Vehicles: Architectures, Protocols and Applications (Wi-UAV), 2012. (<a target="_blank" href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6477817&isnumber=6477486">Link to Full Text at IEEE Xplore</a>)</p>
+
+<h2>Restless Bandits for Sensor Management</h2>
+<p>This research studied methods for accurately and efficiently deploying large numbers of sensors to the seafloor.  Along with collaborators at Schlumberger-Doll Research, we developed a novel Vertical Glider vehicle concept which navigates with USBL from a ship and steers towards its target landing location.  A major challenge is that the USBL is a finite resource to be shared among many vehicles.  To address this, we developed a sensor allocation algorithm based on Restless Bandit theory that computes a measurement policy and aids in the design of deployment schedules.  </p>
+
+<img class="gen" src="i/RBKF_1slide.png" width="560">
+
+ <p >Reed, B., &quot;Multiple-Vehicle Resource-Constrained Navigation in the Deep Ocean,&quot;  Masters Thesis, Massaschusetts Institute of Technology, 2011. (<a target="_blank" target="_blank" href="/hovergroup/pub/BrooksReed_SMThesis.pdf">Full Text, PDF</a>)</p>
+ 
+ <p >Reed, B., C. Ambler, J. Guerrero, and F. Hover, &quot;Vertical Glider Robots for Subsea Equipment Delivery,&quot; IEEE International Conference on Robotics and Automation (ICRA), Shanghai, May 2011. (<a target="_blank" href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5980486">Link to Full Text at IEEE Xplore</a>)</p>
+ 
+<p> Guerrero, J, Hover, F., Ambler, C., Reed, B. and R. Hummel, “Vertical Glider Robot,” <a target="_blank" href="http://www.google.com/patents/US8397657">US Patent US8397657 B2</a>, August, 2010.</p>
+
+<h2>Contributions to the MBARI Long Range AUV</h2>
+<p>In the summer of 2007 I was an <a  target="_blank" href="http://www.mbari.org/education/internship/default.htm">intern</a> with <a target="_blank"  href="https://www.linkedin.com/pub/james-bellingham/1/919/1a4">Dr. James Bellingham</a> at <a target="_blank"  href="http://www.mbari.org">MBARI</a>.  I worked on a conceptual design of an environmental sampler as a nose payload for the <a target="_blank" href="http://www.mbari.org/auv/LRAUV.htm">Long Range AUV</a>.  My intern paper can be found <a  target="_blank" href="http://www.mbari.org/education/internship/07interns/papers/InternPapers/BReed.pdf">here</a>.    In the summer of 2008 I returned to the group and worked primarily on buoyancy engine design. </p>  
+
+</div>
+</div>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-49288156-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
