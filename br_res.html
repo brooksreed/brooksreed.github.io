@@ -28,22 +28,6 @@ Marine robotic vehicle platforms and sensor technology are becoming mature, maki
 
 <p>Along with a team of students and engineers, I have worked to develop a small-scale acoustics and control testbed using autonomous kayaks towing acoustic modems (we use the <a target="_blank" href="http://acomms.whoi.edu">WHOI MicroModem</a>).   We run experiments primarily in the Charles River from the <a target="_blank"  href="http://sailing.mit.edu">MIT Sailing Pavilion</a>, with occasional trips to Boston Harbor and Woods Hole.  More information on this system can be found on <a target="_blank" href="https://wikis.mit.edu/confluence/display/hovergroup/">our wiki</a></p>
 
-<h2>Oceanographic Pursuit</h2>
-
-<p> <img src="i/OPblockdiagram.jpg" width="500"/ align="right" style="margin-left:20px"></p>
- 
- <p> The behavior of ocean fronts and similar structures such as plumes and filaments has long been of interest to oceanographers. Modeling of ocean fronts at the mesoscale and smaller remains challenging , and hence has emerged as a primary focus area for mobile sensing systems. While single vehicles have executed measurement-driven trajectories and ocean modeling is increasingly integrated with vehicle path-planning, multi-vehicle coordination under communication constraints has not yet been integrated with global model information until now. </p>
- 
- <p>This work develops a unique multi-vehicle frontal point description and control methodology for tracking and pursuit of dynamic ocean features at improved temporal resolution compared to existing methods.  Our approach fits as an intermediary between high-bandwidth vehicle flight control (at the seconds time scale) and lower-frequency procedures in numerical ocean modeling, assimilation, and adaptive sampling.  A new projector algorithm enables direct linearization of ocean model forecast uncertainty in vehicle coordinates via a forward model technique, giving a clean stochastic system representation suitable for closed-loop control.  The methodology accurately decomposes spatial and temporal variations, exploits coupling between sites along the feature, and allows for advanced methods in communication-constrained control.  Simulations with three example datasets successfully demonstrate the proof-of-concept. </p>
- 
-<!-- <p> In this work, we combine the themes above to focus on tracking and pursuit of dynamic ocean fronts by multiple unmanned vehicles, posing the problem in such a way as to accommodate the most promising developments in communication-constrained feedback control. This method fits as an intermediary between high-bandwidth vehicle flight control (at the seconds time scale) and lower-frequency procedures in numerical ocean modeling, assimilation, and adaptive sampling. Our approach uses ocean model predictions to design closed-loop networked control at short time scales, and the primary innovation is to represent model uncertainty via a projection of ensemble forecasts into local linearized vehicle coordinates. Based on this projection, we identify a stochastic linear time-invariant model for estimation and control design. The methodology accurately decomposes spatial and temporal variations, exploits coupling between sites along the feature, and allows for advanced methods in communication-constrained control. These elements all enable a reactive control methodology for dynamically sampling the ocean, that may surpass many approaches used today. </p>-->
-
-<iframe width="560" height="315" src="http://www.youtube.com/embed/GEgMaxMt6gQ" frameborder="0" allowfullscreen></iframe>
-
-<p >Reed, B., and F. Hover, &quot;Tracking Ocean Fronts with Multiple Vehicles and Mixed Communication Losses&quot;,  IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2013. (<a target="_blank" href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6696837">Link to full text at IEEE Xplore</a>) </p>
-
-<p>Reed, B. and F. Hover, “Oceanographic Pursuit: Networked Control of Multiple Vehicles Tracking Dynamic Ocean Features,” Methods in Oceanography, Special Issue on Autonomous Vehicles, May 2014. (<a target="_blank"  href="http://www.sciencedirect.com/science/article/pii/S221112201400022X">Link to Open Access pdf</a>)</p>
-
 <h2> JLS Framework for Networked Control </h2>
 
 <p> <img src="i/JLSdiagram.jpg" width="520"/ align="right" style="margin-left:20px"></p>
@@ -60,6 +44,24 @@ The elements that make up the JLS-PPC controller are modular, consisting of a ju
 
 <a  target="_blank" href="https://github.com/brooksreed/JLS-PPC">Code on GitHub</a>
 
+<p >Reed, B., and F. Hover, &quot;JLS-PPC: A Jump Linear System Framework for Networked Control&quot;,  IEEE Transactions on Control Systems Technology, July 2016 (<a target="_blank" href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7524684">Link to full text at IEEE Xplore</a>) </p>
+
+<h2>Oceanographic Pursuit</h2>
+
+<p> <img src="i/OPblockdiagram.jpg" width="500"/ align="right" style="margin-left:20px"></p>
+ 
+ <p> The behavior of ocean fronts and similar structures such as plumes and filaments has long been of interest to oceanographers. Modeling of ocean fronts at the mesoscale and smaller remains challenging , and hence has emerged as a primary focus area for mobile sensing systems. While single vehicles have executed measurement-driven trajectories and ocean modeling is increasingly integrated with vehicle path-planning, multi-vehicle coordination under communication constraints has not yet been integrated with global model information until now. </p>
+ 
+ <p>This work develops a unique multi-vehicle frontal point description and control methodology for tracking and pursuit of dynamic ocean features at improved temporal resolution compared to existing methods.  Our approach fits as an intermediary between high-bandwidth vehicle flight control (at the seconds time scale) and lower-frequency procedures in numerical ocean modeling, assimilation, and adaptive sampling.  A new projector algorithm enables direct linearization of ocean model forecast uncertainty in vehicle coordinates via a forward model technique, giving a clean stochastic system representation suitable for closed-loop control.  The methodology accurately decomposes spatial and temporal variations, exploits coupling between sites along the feature, and allows for advanced methods in communication-constrained control.  Simulations with three example datasets successfully demonstrate the proof-of-concept. </p>
+ 
+<!-- <p> In this work, we combine the themes above to focus on tracking and pursuit of dynamic ocean fronts by multiple unmanned vehicles, posing the problem in such a way as to accommodate the most promising developments in communication-constrained feedback control. This method fits as an intermediary between high-bandwidth vehicle flight control (at the seconds time scale) and lower-frequency procedures in numerical ocean modeling, assimilation, and adaptive sampling. Our approach uses ocean model predictions to design closed-loop networked control at short time scales, and the primary innovation is to represent model uncertainty via a projection of ensemble forecasts into local linearized vehicle coordinates. Based on this projection, we identify a stochastic linear time-invariant model for estimation and control design. The methodology accurately decomposes spatial and temporal variations, exploits coupling between sites along the feature, and allows for advanced methods in communication-constrained control. These elements all enable a reactive control methodology for dynamically sampling the ocean, that may surpass many approaches used today. </p>-->
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/GEgMaxMt6gQ" frameborder="0" allowfullscreen></iframe>
+
+<p >Reed, B., and F. Hover, &quot;Tracking Ocean Fronts with Multiple Vehicles and Mixed Communication Losses&quot;,  IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2013. (<a target="_blank" href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6696837">Link to full text at IEEE Xplore</a>) </p>
+
+<p>Reed, B. and F. Hover, “Oceanographic Pursuit: Networked Control of Multiple Vehicles Tracking Dynamic Ocean Features,” Methods in Oceanography, Special Issue on Autonomous Vehicles, May 2014. (<a target="_blank"  href="http://www.sciencedirect.com/science/article/pii/S221112201400022X">Link to Open Access pdf</a>)</p>
+
 <h2>Dynamic Pursuit with Underwater Acoustics</h2>
 
 <p> <img src="i/PursuitTF.jpg" width="300"/ align="right" style="margin-left:20px"></p>
@@ -73,7 +75,7 @@ The elements that make up the JLS-PPC controller are modular, consisting of a ju
 
 <iframe width="560" height="315" src="http://www.youtube.com/embed/videoseries?list=PLGErotWWaQgHNiFA9lvW3lIt2rU63HtFW" frameborder="0" allowfullscreen></iframe>
 
-<p>Reed, B., Leighton, J., Stojanovic, M. and F. Hover, "Multi-Vehicle Dynamic Pursuit using Underwater Acoustics", International Symposium on Robotics Research (ISRR), December 2013. (<a target="_blank" href="Reed2013_DynamicPursuitExperiments.pdf" target="_blank">Full Text, PDF</a>)</p>
+<p>Reed, B., Leighton, J., Stojanovic, M. and F. Hover, "Multi-Vehicle Dynamic Pursuit using Underwater Acoustics", International Symposium on Robotics Research (ISRR), December 2013. (<a target="_blank" href="Reed2013_DynamicPursuitExperiments.pdf">Full Text Preprint, PDF</a>, <a target="_blank" href="http://link.springer.com/chapter/10.1007%2F978-3-319-28872-7_5"> Chapter in  Springer Tracts in Advanced Robotics</a>)</p>
 
 <!--(<a target="_blank" href="Reed2013_DynamicPursuitExperiments_reformatted.pdf" target="_blank">Preprint, PDF</a>)-->      
 
